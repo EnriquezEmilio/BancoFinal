@@ -1,0 +1,48 @@
+﻿@model Banco.Models.Tarjeta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Tarjeta</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.codigoV)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.codigoV)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.limite)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.limite)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.consumo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.consumo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.titular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.titular.apellido)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="p-2 btn-danger" style="color:white; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8); " asp-action="Edit" asp-route-id="@Model?.id">Editar</a> |
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+</div>

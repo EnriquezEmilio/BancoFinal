@@ -1,0 +1,49 @@
+﻿@model Banco.Models.CajaDeAhorro
+
+
+@{
+    ViewData["Title"] = "Depositar";
+}
+
+<h1>Depositar</h1>
+
+<h4>CajaDeAhorro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Depositar">
+            @if(ViewBag.error != null){
+                <p class="alert alert-danger">Ingrese un monto correcto.</p>
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="cbu" class="control-label">CBU</label>
+                <input asp-for="cbu" class="form-control" readonly style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="cbu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="saldo" class="control-label">Saldo</label>
+                <input asp-for="saldo" class="form-control" readonly style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="saldo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label name="Monto" class="control-label">Monto</label>
+                <input name="Monto" class="form-control" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" onClick="alerta()" value="Depositar" class="btn btn-primary" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />|
+                <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

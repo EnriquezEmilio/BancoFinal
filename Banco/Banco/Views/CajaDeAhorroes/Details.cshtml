@@ -1,0 +1,47 @@
+﻿@model Banco.Models.CajaDeAhorro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>CajaDeAhorro</h4>
+    <hr />
+    <dl class="row">
+                @if (ViewBag.Admin)
+        {
+            @if (ViewBag.TitularesNombres != null && ViewBag.TitularesApellidos != null)
+            {
+                <h2>Titulares:</h2>
+                <ul>
+                    @for (int i = 0; i < ViewBag.TitularesNombres.Count; i++)
+                    {
+                        <li>@ViewBag.TitularesNombres[i] @ViewBag.TitularesApellidos[i]</li>
+                    }
+                </ul>
+            }
+            <br />
+            <br />
+
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.cbu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.cbu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.saldo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.saldo)
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+    <a class="p-2 btn-danger" style="color:white; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8); " asp-action="Edit" asp-route-id="@Model?.id">Editar</a> |
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+</div>

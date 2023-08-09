@@ -1,0 +1,55 @@
+﻿@model Banco.Models.Pago
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar</h1>
+
+<h3>Estas seguro de querer borrar esto?</h3>
+<div>
+    @if (ViewBag.error != null)
+    {
+        <p class="alert alert-danger">Debe estar pagado</p>
+    }
+    <h4>Pago</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.usuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.usuario.apellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.monto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.monto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.pagado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.pagado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.metodo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.metodo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Borrar" class="btn btn-danger " style="color:white; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border:solid red " /> |
+        <a class="btn btn-white  " style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+    </form>
+</div>

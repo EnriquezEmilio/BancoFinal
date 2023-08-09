@@ -1,0 +1,137 @@
+﻿@model IEnumerable<Banco.Models.Pago>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mis Pagos</h1>
+@if (ViewBag.success != null)
+{
+    @switch (ViewBag.success)
+    {
+        case (1):
+            <p class="alert alert-success ">Se creó el pago exitosamente</p>
+            break;
+        case (2):
+            <p class="alert alert-success ">Se editó el pago exitosamente</p>
+            break;
+        case (3):
+            <p class="alert alert-success ">Se eliminó el pago exitosamente</p>
+            break;
+        case (4):
+            <p class="alert alert-success ">Se realizó el pago exitosamente</p>
+            break;
+    }
+}
+<br />
+
+             
+<p>
+    <a class="btnA p-2" asp-action="Create">Crear Nuevo Pago</a>
+</p>
+             
+<br />
+<table class="table">
+    <thead style="background-color:darkgray;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.monto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.metodo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var pago in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => pago.usuario.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => pago.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => pago.monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => pago.pagado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => pago.metodo)
+            </td>
+                <td>
+                    <a class="p-1" style="color:white;background-color:cornflowerblue; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Details" asp-route-id="@pago.id">Details</a>
+                    |
+                    <a class="p-1" style="color:white;background-color:red; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Delete" asp-route-id="@pago.id">Delete</a>
+                    |
+                    @if (!pago.pagado)
+                    {
+                        <a class="p-1" style="color:black;background-color:gold; font-weight:bold; text-decoration:none; border-radius : 12px;" asp-action="Edit" asp-route-id="@pago.id">Edit</a>
+
+                    }
+                    @if (ViewBag.Admin == false)
+                    {
+                        <a class="p-1" style="color:white;background-color:forestgreen; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Pagar" asp-route-id="@pago.id">Pagar</a>
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="p-2" style="color:black;font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-controller="Main" asp-action="Index">Volver</a>
+
+</p>
+
+<audio id="success-sound" >
+    <source src="@Url.Content("~/sounds/Facebook.mp3")" type="audio/mpeg">
+</audio>
+
+<div class="carousel-item active">
+    <img src="@Url.Content("~/Images/promos.png")" class="foto-main container-fluid" alt="Imagen 1" style="border-radius: 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);">
+</div>
+
+@section Scripts {
+    <script>
+        function mostrarYocultarMensajes() {
+            $(".alert").removeAttr("hidden");
+            var hasMessages = $(".alert").length > 0;
+            if (hasMessages) {
+                playSuccessSound();
+                setTimeout(function () {
+                    $(".alert").fadeOut(1000, function () {
+                        $(this).attr("hidden", "hidden");
+                    });
+                }, 2000); 
+            }
+        }
+
+        function playSuccessSound() {
+            var successSound = document.getElementById('success-sound');
+
+            successSound.play();
+        }
+
+        $(document).ready(function () {
+            mostrarYocultarMensajes();
+        });
+    </script>
+}
+
+
+
+
+

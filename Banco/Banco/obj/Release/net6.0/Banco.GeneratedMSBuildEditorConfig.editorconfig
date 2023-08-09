@@ -1,0 +1,205 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Banco
+build_property.RootNamespace = Banco
+build_property.ProjectDir = C:\Users\Paula\source\repos\Banco_9(version2.5)\Banco\Banco\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Paula\source\repos\Banco_9(version2.5)\Banco\Banco
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/AgregarTitular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcQWdyZWdhclRpdHVsYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Depositar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcRGVwb3NpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/EliminarTitular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcRWxpbWluYXJUaXR1bGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Movimientos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcTW92aW1pZW50b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Retirar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcUmV0aXJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/CajaDeAhorroes/Transferir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FqYURlQWhvcnJvZXNcVHJhbnNmZXJpci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Main/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Pagoes/Pagar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXFBhZ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/PlazoFijoes/Rescatar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhem9GaWpvZXNcUmVzY2F0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Registro/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Tarjetas/PagarTarjeta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyamV0YXNcUGFnYXJUYXJqZXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/UsuarioCajas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0NhamFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/UsuarioCajas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0NhamFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/UsuarioCajas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0NhamFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/UsuarioCajas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0NhamFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/UsuarioCajas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0NhamFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Paula/source/repos/Banco_9(version2.5)/Banco/Banco/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-won85v5ops

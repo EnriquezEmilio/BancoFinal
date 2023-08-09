@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Página principal";
+}
+
+<div class="titulo-login">
+    <h1>Bienvenido </h1>
+    <br />
+   
+    @if (ViewBag.Admin)
+    {
+        <h2> @ViewBag.NombreUsuario  @ViewBag.ApellidoUsuario <span style="color:firebrick; font-style:oblique"> - Administrador -</span> </h2>
+    }
+    else
+    {
+        <h2>@ViewBag.NombreUsuario  @ViewBag.ApellidoUsuario </h2>
+    }
+</div>
+<br />
+
+<div class="mainHub">
+    @if (ViewBag.Admin == true)
+    {
+        <a id="link-usuarios" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+    }
+    <a id="link-cajas" asp-controller="CajaDeAhorroes" asp-action="Index">Cajas de ahorro</a>
+    <a id="link-tarjetas" asp-controller="Tarjetas" asp-action="Index">Tarjetas</a>
+    <a id="link-plazos" asp-controller="PlazoFijoes" asp-action="Index">Plazos fijo</a>
+    <a id="link-pagos" asp-controller="Pagoes" asp-action="Index">Pagos</a>
+</div>
+
+<audio id="button-sound">
+    <source src="@Url.Content("~/sounds/click2.mp3")" type="audio/mpeg">
+</audio>
+<br />
+
+<div class="carousel-item active">
+    <img src="@Url.Content("~/Images/foto-main.png")" class=" foto-main container-fluid" alt="Imagen 1" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);">
+</div>
+
+
+
+ @section Scripts {
+    <script>
+        document.getElementById('link-usuarios').addEventListener('click', playButtonSound);
+        document.getElementById('link-cajas').addEventListener('click', playButtonSound);
+        document.getElementById('link-tarjetas').addEventListener('click', playButtonSound);
+        document.getElementById('link-plazos').addEventListener('click', playButtonSound);
+        document.getElementById('link-pagos').addEventListener('click', playButtonSound);
+
+        function playButtonSound() {
+             var buttonSound = document.getElementById('button-sound');
+
+             buttonSound.play();
+}
+    </script>
+    }

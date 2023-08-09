@@ -1,0 +1,85 @@
+﻿@model Banco.Models.Tarjeta
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>Tarjeta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            @if (ViewBag.error != null)
+            {
+                @switch (ViewBag.error)
+                {
+                    case (0):
+                        <p class="alert alert-danger">El consumo es mayor el que límite</p>
+                        break;
+                    case (1):
+                        <p class="alert alert-danger">Limite ingresado incorrecto</p>
+                        break;
+                    case (2):
+                        <p class="alert alert-danger">El consumo es incorrecto</p>
+                        break;
+                }
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (ViewBag.Admin == true)
+            {
+                <div class="form-group">
+                    <label asp-for="id_titular" class="control-label">Titular</label>
+                    <select asp-for="id_titular" class="form-control" asp-items="@ViewBag.id_titular"></select>
+                </div>
+            }
+            <div class="form-group">
+                <label asp-for="numero" class="control-label">Número</label>
+                <input asp-for="numero" class="form-control" readonly value="@ViewBag.numero" />
+                <span asp-validation-for="numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="codigoV" class="control-label">Código</label>
+                <input asp-for="codigoV" class="form-control" readonly value="@ViewBag.codigoV" />
+                <span asp-validation-for="codigoV" class="text-danger"></span>
+            </div>
+            @if (ViewBag.Admin == true)
+            {
+                <div class="form-group">
+                    <label asp-for="limite" class="control-label">Límite</label>
+                    <input asp-for="limite" class="form-control" value="@ViewBag.limite" />
+                    <span asp-validation-for="limite" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="consumo" class="control-label">Consumo</label>
+                    <input asp-for="consumo" class="form-control" value="@ViewBag.consumo" />
+                    <span asp-validation-for="consumo" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label asp-for="limite" class="control-label">Límite</label>
+                    <input asp-for="limite" class="form-control" readonly value="@ViewBag.limite" />
+                    <span asp-validation-for="limite" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="consumo" class="control-label">Consumo</label>
+                    <input asp-for="consumo" class="form-control" readonly value="@ViewBag.consumo" />
+                    <span asp-validation-for="consumo" class="text-danger"></span>
+                </div>
+            }
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" style="font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid blue; " />
+                <a class="btn p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

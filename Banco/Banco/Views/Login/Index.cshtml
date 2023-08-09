@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+
+<div class="titulo-login">
+    <br />
+    <h1>Bienvenido</h1>
+</div>
+<br />
+<div class="form-login">
+    <img class="container p-0"  src="@Url.Content("~/Images/logo-login.png")" alt="Logo del Login">
+    <h2>Iniciar sesión</h2>
+    <form action="@Url.Action("Index","Login")"  method="post">
+        <input name="Dni" type="number" placeholder="Ingresar DNI" />
+        <input type="password" name="password" placeholder="Ingresar contraseña" />
+        <input type="submit" value="Ingresar">
+        @if (ViewBag.errorLogin != null)
+        {
+            @switch (ViewBag.errorLogin)
+            {
+                case (1):
+                    <p id="error1" class="alertL alert-danger">"No se encontró un usuario con ese DNI"</p>
+                    break;
+                case (2):
+                    <p id="error2" class="alertL alert-danger">"Contraseña incorrecta"</p>
+                    break;
+                case (3):
+                    <p id="error3" class="alertL alert-danger">"Contraseña incorrecta. El usuario está bloqueado"</p>
+                    break;
+                case (4):
+                    <p id="error4" class="alertL alert-danger">"El usuario está bloqueado"</p>
+                    break;
+            }
+        }
+
+    </form>
+    <div class="d-flex justify-content-center">
+        <p style="font-size:large">No tenés cuenta? </p>
+        <a style="text-decoration:none; font-size:large" asp-controller="Registro" asp-action="Index"> Registrate</a>
+    </div></div>
+
+
+    @section Scripts {
+<script>
+    function mostrarYocultarMensajes() {
+        $(".alertL").removeAttr("hidden");
+        setTimeout(function () {
+            $(".alertL").fadeOut(1000, function () {
+                $(this).attr("hidden", "hidden");
+            });
+        }, 2000); 
+    }
+
+    $(document).ready(function () {
+        mostrarYocultarMensajes();
+    });
+</script>
+
+}

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Registro";
+}
+<div class="titulo-login">
+    <h1>Registrate</h1>
+</div>
+<div class="form-login">
+    <h2>Ingresá tus datos</h2>
+    <form action="@Url.Action("Index","Registro")" method="post">
+        <input name="Dni" type="number" placeholder="Ingresar DNI" required />
+        <input name="nombre" type="text" placeholder="Ingresar nombre" required />
+        <input name="apellido" type="text" placeholder="Ingresar apellido" required />
+        <input name="mail" type="text" placeholder="Ingresar mail" required />
+        <input type="password" name="password" placeholder="Ingresar contraseña" required />
+
+        @if (ViewBag.error != null)
+        {
+            <p class="alert alert-danger">Ya existe un usuario con este DNI </p>
+        }
+        <input type="submit" value="Registrarse">
+    </form>
+    <a style="text-decoration:none;font-weight:bold; font-size:large" asp-controller="Login" asp-action="Index">Volver</a>
+</div>
+

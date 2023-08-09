@@ -1,0 +1,92 @@
+﻿@model Banco.Models.PlazoFijo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>PlazoFijo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            @if (ViewBag.error != null)
+            {
+                @switch (ViewBag.error)
+                {
+                    case (0):
+                        <p class="alert alert-danger">Ingrese un monto correcto.</p>
+                        break;
+
+                    case (1):
+                        <p class="alert alert-danger">Saldo insuficiente.</p>
+                        break;
+                }
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-1">
+                <label asp-for="monto" class="control-label"></label>
+                <input asp-for="monto" class="form-control" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="monto" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="fechaIni" class="control-label"></label>
+                <input asp-for="fechaIni" class="form-control" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="fechaIni" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="fechaFin" class="control-label"></label>
+                <input asp-for="fechaFin" class="form-control" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="fechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="tasa" class="control-label"></label>
+                <input class="form-control" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" readonly value="0.78" />
+                <span asp-validation-for="tasa" class="text-danger"></span>
+            </div>
+
+
+
+
+
+            @if (ViewBag.Admin == true)
+            {
+                <div class="form-group">
+                    <label name="cbu" class="control-label">Usuario</label>
+                    <select name="cbu" class="form-control">
+                        @foreach (var item in ViewBag.cajas)
+                        {
+                            <option value="@item.cbu">CBU: @item.cbu  ; Saldo: @item.saldo</option>
+                        }
+                    </select>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label name="cbu" class="control-label">Usuario</label>
+                    <select name="cbu" class="form-control">
+                        @foreach (var item in ViewBag.cajas)
+                        {
+                            <option value="@item.cbu">CBU: @item.cbu  ; Saldo: @item.saldo</option>
+                        }
+                    </select>
+                </div>
+            }
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" style="font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid blue; " />
+                <a class="btn p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

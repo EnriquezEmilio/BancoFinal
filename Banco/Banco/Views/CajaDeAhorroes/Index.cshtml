@@ -1,0 +1,134 @@
+﻿
+@model IEnumerable<Banco.Models.CajaDeAhorro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mis Cajas De Ahorro</h1>
+@if (ViewBag.success != null)
+{
+    @switch (ViewBag.success)
+    {
+        case ("1"):
+            <p class="alert alert-success">La caja se creo exitosamente</p>
+            break;
+        case ("2"):
+            <p class="alert alert-success">La caja se editó exitosamente</p>
+            break;
+        case ("3"):
+            <p class="alert alert-success">La caja fue elimanda correctamente</p>
+            break;
+        case ("4"):
+            <p class="alert alert-success">Depósito realizado exitosamente</p>
+            break;
+        case ("5"):
+            <p class="alert alert-success">Su retiro fue realizado exitosamente</p>
+            break;
+        case ("6"):
+            <p class="alert alert-success">Transferencia realizada exitosamente</p>
+            break;
+        case ("7"):
+            <p class="alert alert-success">Titular agregado exitosamente</p>
+            break;
+        case ("8"):
+            <p class="alert alert-success">Titular eliminado exitosamente</p>
+            break;
+    }
+}
+<br />
+ 
+<p>
+    <a class="btnA p-2"  asp-action="Create">Crear Nueva Caja De Ahorro</a>
+</p>
+             
+<br />
+<table class="table">
+    <thead style="background-color:darkgray;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cbu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.saldo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+              
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.cbu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.saldo)
+                </td>
+                
+                <td>
+                    @if (ViewBag.Admin == true)
+                    {
+                        <a class="p-1" style="color:black;background-color:gold; font-weight:bold; text-decoration:none; border-radius : 12px;" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                        <a class="p-1" style="color:white;background-color:darkolivegreen; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="AgregarTitular" asp-route-id="@item.id">Agregar Titular</a>
+                        <a class="p-1" style="color:white;background-color:darkviolet; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="EliminarTitular" asp-route-id="@item.id">Eliminar Titular</a>
+                    }
+                    |
+                    <a class="p-1" style="color:white;background-color:cornflowerblue; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    @if (ViewBag.Admin == false)
+                    {
+                        <a class="p-1" style="color:white;background-color:red; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                        <a class="p-1" style="color:white;background-color:darkcyan; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Depositar" asp-route-id="@item.id">Deposito</a>
+                        <a class="p-1" style="color:white;background-color:darkkhaki; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Retirar" asp-route-id="@item.id">Retiro</a>
+                        <a class="p-1" style="color:white;background-color:coral; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Transferir" asp-route-id="@item.id">Transferencia</a>
+                    }|
+                    <a class="p-1" style="color:white;background-color:dimgray; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Movimientos" asp-route-id="@item.id">Movimientos</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-controller="Main" asp-action="Index">Volver</a>
+
+</p>
+
+
+<audio id="success-sound">
+    <source src="@Url.Content("~/sounds/Facebook.mp3")" type="audio/mpeg">
+</audio>
+
+<div class="carousel-item active">
+    <img src="@Url.Content("~/Images/cuentas.jpg")" class="foto-main container-fluid" alt="Imagen 1" style="border-radius: 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);">
+</div>
+
+@section Scripts {
+    <script>
+        function mostrarYocultarMensajes() {
+            $(".alert").removeAttr("hidden");
+            var hasMessages = $(".alert").length > 0;
+            if (hasMessages) {
+                playSuccessSound();
+                setTimeout(function () {
+                    $(".alert").fadeOut(1000, function () {
+                        $(this).attr("hidden", "hidden");
+                    });
+                }, 2000); 
+            }
+        }
+
+        function playSuccessSound() {
+            var successSound = document.getElementById('success-sound');
+
+            successSound.play();
+        }
+
+        $(document).ready(function () {
+            mostrarYocultarMensajes();
+        });
+    </script>
+}

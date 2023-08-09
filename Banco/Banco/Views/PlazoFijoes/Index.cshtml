@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Banco.Models.PlazoFijo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mis Plazos Fijos</h1>
+@if (ViewBag.success != null)
+{
+    @switch (ViewBag.success)
+    {
+        case (1):
+            <p class="alert alert-success">Plazo fijo se creo con éxito</p>
+            break;
+        case (2):
+            <p class="alert alert-success">El plazo fijo se eliminó con éxito</p>
+            break;
+        case (3):
+            <p class="alert alert-success">El plazo fijo se editó con éxito</p>
+            break;
+        case (4):
+            <p class="alert alert-success">El plazo fijo se pagó con éxito</p>
+            break;
+        case (5):
+            <p class="alert alert-success">El plazo se rescato exitosamente</p>
+            break;
+        case (6):
+            <p class="alert alert-success">El plazo no se puede rescatar porque ya fue pagado</p>
+            break;
+    }
+}
+<br />
+@if (ViewBag.Admin == false)
+{
+    <p>
+        <a class="btnA p-2" asp-action="Create">Crear Nuevo Plazo Fijo</a>
+    </p>
+}
+<br />
+<table class="table">
+    <thead style="background-color:darkgray;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.monto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaIni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pagado)
+            </th>
+             <th>
+                @if (ViewBag.Admin == false)
+                {
+                    @Html.DisplayNameFor(model => model.titular)
+                }
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.monto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaIni)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaFin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tasa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pagado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.titular.apellido)
+                </td>
+                <td>
+                    <a class="p-1" style="color:white;background-color:cornflowerblue; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a class="p-1" style="color:white;background-color:red; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Delete" asp-route-id="@item.id">Delete</a>|
+                    <a class="p-1" style="color:black;background-color:gold; font-weight:bold; text-decoration:none; border-radius : 12px;" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                    <!--  <a class="p-1" style="color:white;background-color:dimgray; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="VerificarYAcreditarPlazosFijos" asp-route-id="@item.id">Verificar Plazo Fijo</a> -->
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-controller="Main" asp-action="Index">Volver</a>
+
+</p>
+
+
+<audio id="success-sound">
+    <source src="@Url.Content("~/sounds/Facebook.mp3")" type="audio/mpeg">
+</audio>
+
+<div class="carousel-item active">
+    <img src="@Url.Content("~/Images/plazosfijos.jpg")" class="foto-main container-fluid" alt="Imagen 1" style="border-radius: 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);">
+</div>
+
+@section Scripts {
+    <script>
+        function mostrarYocultarMensajes() {
+            $(".alert").removeAttr("hidden");
+            var hasMessages = $(".alert").length > 0;
+            if (hasMessages) {
+                playSuccessSound();
+                setTimeout(function () {
+                    $(".alert").fadeOut(1000, function () {
+                        $(this).attr("hidden", "hidden");
+                    });
+                }, 2000);
+            }
+        }
+
+        function playSuccessSound() {
+            var successSound = document.getElementById('success-sound');
+
+            successSound.play();
+        }
+
+        $(document).ready(function () {
+            mostrarYocultarMensajes();
+        });
+    </script>
+}

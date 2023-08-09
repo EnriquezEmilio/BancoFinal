@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Banco.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    var message = TempData["Message"]?.ToString();
+}
+<h1>Usuarios</h1>
+@if (TempData["SuccessMessage"] != null)
+{
+    @switch (TempData["SuccessMessage"].ToString())
+    {
+        case "Nombre":
+            <p class="alert alert-success">Se cambió el nombre con éxito</p>
+            break;
+        case "Apellido":
+            <p class="alert alert-success">Se cambió el apellido con éxito</p>
+            break;
+        case "Mail":
+            <p class="alert alert-success">Se cambió el mail con éxito</p>
+            break;
+        case "Bloqueado":
+            <p class="alert alert-success">Se cambió el estado del usuario con éxito</p>
+            break;
+        case "Admin":
+            <p class="alert alert-success">Se cambiaron los permisos del usuario con éxito</p>
+            break;
+        case "Password":
+            <p class="alert alert-success">Se cambió la contraseña con éxito</p>
+            break;
+    }
+}
+
+@if (TempData["SuccessMessage1"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage1"]
+    </div>
+}
+@if (TempData["SuccessMessage2"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage2"]
+    </div>
+}
+<br />
+<p>
+    <a class ="btnA p-2"  asp-action="Create">Crear Nuevo Usuario</a>
+</p>
+<br />
+<table class="table">
+    <thead style="background-color:darkgray;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.intentosFallidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bloqueado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isAdmin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.intentosFallidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bloqueado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isAdmin)
+            </td>
+                <td>
+                    <a class="p-1" style="color:white;background-color:cornflowerblue; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a class="p-1" style="color:white;background-color:red; font-weight:bold; text-decoration:none; border-radius : 12px; " asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    <a class="p-1" style="color:black;background-color:gold; font-weight:bold; text-decoration:none; border-radius : 12px;" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-controller="Main" asp-action="Index">Volver</a>
+
+</p>
+
+
+<audio id="success-sound">
+    <source src="@Url.Content("~/sounds/notificacion.mp3")" type="audio/mpeg">
+</audio>
+
+<div class="carousel-item active">
+    <img src="@Url.Content("~/Images/slider_02.png")" class="foto-main container-fluid" alt="Imagen 1" style="border-radius: 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);">
+</div>
+
+@section Scripts {
+    <script>
+        function mostrarYocultarMensajes() {
+            $(".alert").removeAttr("hidden");
+            var hasMessages = $(".alert").length > 0;
+            if (hasMessages) {
+                playSuccessSound();
+                setTimeout(function () {
+                    $(".alert").fadeOut(1000, function () {
+                        $(this).attr("hidden", "hidden");
+                    });
+                }, 2000); 
+            }
+        }
+
+        function playSuccessSound() {
+            var successSound = document.getElementById('success-sound');
+
+            successSound.play();
+        }
+
+        $(document).ready(function () {
+            mostrarYocultarMensajes();
+        });
+    </script>
+}

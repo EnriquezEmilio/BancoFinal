@@ -1,0 +1,72 @@
+﻿@model Banco.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group mb-1">
+                <label asp-for="dni" class="control-label"></label>
+                <input asp-for="dni" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="dni" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="apellido" class="control-label"></label>
+                <input asp-for="apellido" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="mail" class="control-label"></label>
+                <input asp-for="mail" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="mail" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-1">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="intentosFallidos" class="control-label"></label>
+                <input asp-for="intentosFallidos" class="form-control" style=" border-radius : 12px;box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <span asp-validation-for="intentosFallidos" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-for="bloqueado" /> @Html.DisplayNameFor(model => model.bloqueado)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" style="box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-for="isAdmin" /> @Html.DisplayNameFor(model => model.isAdmin)
+                </label>
+            </div>
+            <br />
+            <div class="form-group ">
+                 <input type="submit" value="Guardar" class="btn btn-primary " style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+                <a class="btn p-1" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

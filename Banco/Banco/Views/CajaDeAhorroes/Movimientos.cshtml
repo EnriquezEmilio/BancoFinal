@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Banco.Models.Movimiento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Movimientos</h1>
+<div class="col-md-4">
+    <!--
+<form asp-action="Movimientos">
+    
+    <input type="hidden" name="id_caja" value=@ViewBag.Id_caja />
+    <div class="form-group">
+                <label name="Detalle" class="control-label">Detalle</label>
+            <input name="Detalle" type="text" class="form-control" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+           </div>
+   <div class="form-group">
+                <label name="Monto" class="control-label">Monto</label>
+            <input name="Monto" type=number class="form-control" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+           </div>
+           <div class="form-group">
+                <label name="Fecha"  class="control-label">Fecha</label>
+            <input name="Fecha" type=date class="form-control" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+           </div>
+           <br />
+           <div class="form-group">
+            <input type="submit" value="Filtrar" class="btn btn-primary" style=" border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" />
+            </div>
+</form>
+    -->
+</div>
+<br />
+<table class="table">
+    <thead style="background-color:darkgray;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.detalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.monto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.detalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br />
+<div>
+    <a class="p-2" style="color:black; font-weight:bold; text-decoration:none; border-radius : 12px; box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);border: solid;" asp-action="Index">Volver</a>
+</div>
